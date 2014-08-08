@@ -1,0 +1,75 @@
+<!-- code author: Ivan Gashtilov (u5500347) -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>: : : Loan Calculator : : :</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<script type="text/javascript" src="index.js"></script>
+	</head>
+	<body>
+		<div id="loan">
+			<h1>Loan Calculator</h1>
+			<form id="calculateLoan" action="get" method="post" onsubmit="calculateLoan();return false;" onreset="resetFormStyles();">
+				<fieldset class="ld">
+					<legend>Loan Details</legend>
+					<ul>
+						<li class="bigLi">
+							<label for="loanAmount">Amount:</label>
+							<input class="money" type="text" id="loanAmount" />
+							<img id="helpAmount" src="help.jpg" alt="Click for help" onclick="addHelp1();" />
+						</li>
+						<li class="bigLi">
+							<label for="repaymentPeriod">Repayment period:</label>
+							<input class="time" type="text" id="repaymentPeriod" />
+							<img id="helpTime" src="help.jpg" alt="Click for help" onclick="addHelp2();"/>
+						</li>
+						<li class="normalLi">
+							<img src="help.jpg" alt="Click for help" onclick="addHelp3();"/>
+							<input type="checkbox" id="insurance" value="Insurance" checked="checked" />
+							<label for="insurance" class="forCheckbox">Check this box if you would like to protect your loan</label>
+						</li>
+						<li class="lastLi">
+							<input type="submit" class="inputButton" value="Calculate" />
+						</li>
+					</ul>
+				</fieldset>
+				<fieldset class="lr">
+					<legend>Loan Calculations</legend>
+					<ul>
+						<li class="normalLi">
+							<label for="interestRate">Interest Rate:</label>
+							<img src="help.jpg" alt="Click for help" onclick="addHelp4();" />
+							<input class="percent" type="text" id="interestRate" readonly="readonly" />
+						</li>
+						<li class="normalLi">
+							<label for="interestPay">Interest to be repaid:</label>
+							<img src="help.jpg" alt="Click for help" onclick="addHelp5();" />
+							<input class="money" type="text" id="interestPay" readonly="readonly" />
+						</li>
+						<li class="normalLi">
+							<label for="totalPay">Total amount to be repaid:</label>
+							<img src="help.jpg" alt="Click for help" onclick="addHelp6();" />
+							<input class="money" type="text" id="totalPay" readonly="readonly" />
+						</li>
+						<li class="normalLi">
+							<label for="monthlyPay">Monthly repayment:</label>
+							<img src="help.jpg" alt="Click for help" onclick="addHelp7();" />
+							<input class="money" type="text" id="monthlyPay" readonly="readonly" />
+						</li>
+						<li class="lastLi">
+							<input type="reset" class="inputButton" value="Reset" />
+						</li>
+					</ul>
+				</fieldset>
+			</form>
+			<div id="help">
+				<img id="helpWarning" src="help.jpg" alt="Help"/>
+				<div id="helpContent">
+					<p>Click the help icons above to see help for the relevant fields</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,175 @@
+/* code author: Ivan Gashtilov (u5500347) */
+
+html, body, div, h1, p, img, ul, li, fieldset, form, label, legend, span{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	vertical-align: baseline;
+}
+ul{
+	list-style: none;
+}
+h1{
+	font-size: 45px;
+	height: 65px;
+	padding: 15px 0 0 95px;
+	margin: 15px;
+	background-image: url(calculator.png);
+	background-repeat: no-repeat;
+	color: #55B3FF;
+	text-shadow: -1px -1px #777, 1px 1px #fff;
+}
+html, body{
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 800px;
+	height: 100%;
+	margin: auto;
+	line-height: 1;
+	font-family: Calibri, Verdana, sans-serif;
+	font-size: 15px;
+	color:#333;
+	background-image:url(background.jpg);
+	background-repeat:repeat-x;
+}
+#loan{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 1.5px solid #888;
+	border-radius: 15px;
+	background-color: #eee;
+}
+#help{
+	margin: 15px;
+	padding: 15px;
+	background-color: #fff;
+	border: 1.5px solid #888;
+	overflow: hidden;
+}
+#helpContent{
+	width: 685px;
+	float: right;
+	padding: 8px 8px 3px 8px;
+}
+#helpContent p{
+	margin-bottom: 5px;
+}
+#helpContent li{
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+#helpContent ul{
+	margin: 0px 0px 7px 25px;
+	list-style: disc;
+}
+span{
+	color: #f00;
+	font-size: 18px;
+	font-weight: bold;
+}
+form{
+	padding: 15px;
+	border-top: 1.5px solid #888;
+	border-bottom: 1.5px solid #888;
+	overflow:hidden;
+	background-color: #fff;
+}
+form img{
+	float: right;
+}
+legend{
+    font-size:25px;
+    font-weight:bold;
+    margin-left: 15px;
+    color: #55B3FF;
+}
+fieldset{
+    border: 1.5px solid #888;
+    float:left;
+    padding: 15px;
+    color: #555;
+}
+fieldset.ld{
+	margin-right: 15px;
+	width: 300px;
+}
+fieldset.lr{
+	width: 389px;
+}
+fieldset.ld label{
+   display: block;
+   margin-bottom: 5px;
+}
+fieldset.ld  label.forCheckbox{
+   display: inline;
+   position: relative;
+   top: -10px;
+   left: 2px;
+}
+fieldset.lr img{
+	margin-left: 5px;
+}
+.normalLi{
+	height: 30px;
+	margin-bottom: 10px;
+}
+.lastLi{
+	height: 30px;
+}
+.bigLi{
+	height: 50px;
+	margin-bottom: 10px;
+}
+fieldset.lr label{
+	position: relative;
+	top: 7px;
+}
+input{
+	height: 28px;
+	color: #333;
+}
+input.money{
+	background: #fff url(pound.jpg) no-repeat 1px 4px;
+	text-align: right;
+	padding-left: 20px;
+	padding-right: 5px;
+	width: 115px;
+}
+input.time{
+	background: #fff url(yrs.png) no-repeat 40px 4px;
+	padding-left: 5px;
+	width: 80px;
+}
+fieldset.lr input.money{
+	background: #eee url(pound.jpg) no-repeat 1px 4px;
+}
+fieldset.lr input.percent{
+	background: #eee url(percent.png) no-repeat 38px 4px;
+	padding: 0px 25px 0 5px;
+	width: 30px;
+}
+fieldset.lr input{
+	float: right;
+}
+.inputButton{
+	background-color: #0D6EBE;
+	color: #eee;
+	font-weight: bold;
+	border-radius: 5px;
+	float: right;
+}
+/* the following rules were commented out when validating the css, they are Mozilla Firefox specific and W3C does not understand them */
+
+input::-moz-focus-inner /*Remove button padding in FF*/
+{ 
+    border: 0;
+    padding: 0;
+}
+#loan{
+	-moz-border-radius: 15px;
+}
+.inputButton{
+	-moz-border-radius: 5px;
+}
