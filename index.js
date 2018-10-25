@@ -1,38 +1,38 @@
 /* code author: Ivan Gashtilov: (u5500347) */
 
-var amountIsHelpImage = true; //always reference this value when making amends to the amount
-var timeIsHelpImage = true; //always reference this value when making amends to the period
+const amountIsHelpImage = true; //always reference this value when making amends to the amount
+const timeIsHelpImage = true; //always reference this value when making amends to the period
 
 function calculateLoan()
 {
 	resetAnswerValues();
 	resetFormStyles();
 	
-	var inputLoanAmount = parseFloat(document.getElementById('loanAmount').value);
+	const inputLoanAmount = parseFloat(document.getElementById('loanAmount').value);
 	inputLoanAmount = inputLoanAmount.toFixed(2);
-	var inputTime = Math.round(document.getElementById('repaymentPeriod').value);
+	const inputTime = Math.round(document.getElementById('repaymentPeriod').value);
 	
 	document.getElementById('loanAmount').value = inputLoanAmount;
 	document.getElementById('repaymentPeriod').value = inputTime;
 	
-	var loanAmountIsValid = validateLoan(inputLoanAmount);
-	var timeIsValid = validateTime(inputTime);
+	const loanAmountIsValid = validateLoan(inputLoanAmount);
+	const timeIsValid = validateTime(inputTime);
 	
 	if(loanAmountIsValid && timeIsValid)
 	{
-		var interestRate = writeInterestRate(inputLoanAmount);
+		const interestRate = writeInterestRate(inputLoanAmount);
 		interestRate = interestRate.toFixed(2);
 		document.getElementById('interestRate').value = interestRate;
 		
-		var interestRepayment = writeInterestOnTheLoan(inputLoanAmount, interestRate, inputTime);
+		const interestRepayment = writeInterestOnTheLoan(inputLoanAmount, interestRate, inputTime);
 		interestRepayment = interestRepayment.toFixed(2);
 		document.getElementById('interestPay').value = interestRepayment;
 		
-		var total = parseFloat(writeTotalAmount(inputLoanAmount, interestRepayment));
+		const total = parseFloat(writeTotalAmount(inputLoanAmount, interestRepayment));
 		total = total.toFixed(2);
 		document.getElementById('totalPay').value = total;
 		
-		var monthlyRepayment = writeMonthlyRepayment(total, inputTime);
+		const monthlyRepayment = writeMonthlyRepayment(total, inputTime);
 		monthlyRepayment = monthlyRepayment.toFixed(2);
 		document.getElementById('monthlyPay').value = monthlyRepayment;
 	}
@@ -44,13 +44,13 @@ function calculateLoan()
 
 function writeInterestOnTheLoan(inputLoanAmountIn, interestRateIn, inputTimeIn)
 {
-	var interestRepaymentOut = ((interestRateIn/100) * inputLoanAmountIn) * inputTimeIn;
+	const interestRepaymentOut = ((interestRateIn/100) * inputLoanAmountIn) * inputTimeIn;
 	return interestRepaymentOut;
 }
 
 function writeTotalAmount(inputLoanAmountIn, interestRepaymentIn)
 {
-	var totalOut = 0;
+	const totalOut = 0;
 	if(document.getElementById('insurance').checked)
 	{
 		totalOut = (1 + 5 / 100) * inputLoanAmountIn;
@@ -65,13 +65,13 @@ function writeTotalAmount(inputLoanAmountIn, interestRepaymentIn)
 
 function writeMonthlyRepayment(totalIn, inputTimeIn)
 {
-	var monthlyRepaymentOut = totalIn / (inputTimeIn * 12);
+	const monthlyRepaymentOut = totalIn / (inputTimeIn * 12);
 	return monthlyRepaymentOut;
 }
 
 function writeInterestRate(inputLoanAmountIn)
 {
-	var interestOut = -111; //some dummy number for validation purposes
+	const interestOut = -111; //some dummy number for validation purposes
 	
 	if(inputLoanAmountIn <= 10000)
 	{
